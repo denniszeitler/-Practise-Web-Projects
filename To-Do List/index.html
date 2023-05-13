@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+<title>To-Do Liste</title>
+
+<metacharset="utf-8">
+ <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <link rel="stylesheet" href="style.css" type="text/css" />
+ <script src="script.js"></script>
+
+</head>
+
+<body>
+
+<div id="save-row" class="div-row">
+</div>    
+<div id="program">
+    <div class="div-row">
+        <p class="textsize-big" id="title">To-Do Liste</p> <img id="edit-list" src="sources/edit-list-icon.png">
+    </div>
+    <p id="error" class="font-size-small"></p>
+    <div class="div-row">
+        <input id="new-task" placeholder="Enter a title first"><button class="textsize-big" id="add" onclick="addtask()">+</button>
+    </div>
+    <div id="taskdiv">
+        <ul></ul>
+    </div>
+    <div class="div-row">
+        <button class id="add" onclick="savelist()">Save</button>
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
