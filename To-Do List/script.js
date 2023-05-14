@@ -1,99 +1,79 @@
-// Errorhandling!
-// Function writeLog!
-// verschönern!
+var input; //Input-Feld für title & task
+var taskdiv; //DIV für unordered list
+var ul; 
+var li; // li[0] = title, rest to-do Punkte
+var error; // Ausgabe in <p> Tag von Fehlermeldungen
 
-function addtask(){
+window.onload = function() {
+    input = document.getElementById("new-task");
+    taskdiv = document.getElementById("taskdiv");
+    ul = taskdiv.querySelector("ul");
+    li = document.createElement("li");
+    error = document.getElementById("error");
+        error.classList.add("error");
+    savedlists();
+};
 
-    var input = document.getElementById("new-task");
-    var li = document.createElement("li");
-    var taskdiv = document.getElementById("taskdiv");
-    var ul = taskdiv.querySelector("ul");
-        li.textContent = input.value;
 
-        if(input.value.length == 0){
-            var error = document.getElementById("error");
-            error.classList.add("error");
-            error.textContent = "Es wurde kein Text eingegeben";
-            return
-        }
 
+function addtask() {
+    li.textContent = input.value;
+    if(input.value.length == 0){
+        error.textContent = "Es wurde kein Text eingegeben";
+        return;
+    }
 
     if (ul.children.length === 0){
         input.placeholder = "Add your Tasks";
         li.textContent = input.value;
-        li.classList.add ("title");
-
+        li.classList.add("title");
         ul.appendChild(li);
     } else {
         li.textContent = input.value;
         ul.appendChild(li);
-
     }
 
     input.value = ""; //clear Input-Feld
 };
 
-
-
-
-function savelist(){
-
-    var input = document.getElementById("new-task");
+function savelist() {
     var tasknr = localStorage.length;
     var uniqueKey = 'task-' + tasknr;
-    var taskdiv = document.getElementById("taskdiv");
-    var ul = taskdiv.querySelector("ul");
     var items = ul.querySelectorAll('li');
     var tasks = [];
 
-    if(ul.textContent.trim() === ''){
-        var error = document.getElementById("error");
-        error.classList.add("error");
+    if(ul.textContent.trim() === '') {
         error.textContent = "Liste hat keinen Inhalt";
-        return
+        return;
     }
 
-    if(ul.id.startsWith("task")){
+    if(ul.id.startsWith("task")) {
         uniqueKey = ul.id;
-
     }
-    
 
-    for(var i =0; i < items.length; i++){
+    for(var i = 0; i < items.length; i++){
         tasks.push(items[i].textContent);
     }
 
     localStorage.setItem(uniqueKey, JSON.stringify(tasks));
     ul.innerHTML = ""; //clear List
-    input.placeholder = ("Enter a title first");
+    input.placeholder = "Enter a title first";
     savedlists();
-
-
 };
 
-
-function loadlist(uniqueKey){
+function loadlist(uniqueKey) {
     var requestedtask = JSON.parse(localStorage.getItem(uniqueKey));
-    var taskdiv = document.getElementById("taskdiv");
-    var ul = taskdiv.querySelector("ul");
-    var input = document.getElementById("new-task");
-        input.placeholder = ("Add your tasks");
-    
+        input.placeholder = "Add your tasks";
         ul.innerHTML = "";
-    
 
-    if(ul.classList.contains(uniqueKey)){
+
+    if(ul.classList.contains(uniqueKey)) {
         console.log("Liste bereits geöffnet!");
-
-    }
-    else{
+    } else {
         ul.id = uniqueKey;
-    
-        
     }
-   
-    for(var i =0; i < requestedtask.length; i++){
-        var li = document.createElement("li");
+
+    for(var i = 0; i < requestedtask.length; i++){
         li.textContent = requestedtask[i];
         li.addEventListener('click', function(){
             if(this.classList.contains("strike")){
@@ -101,25 +81,33 @@ function loadlist(uniqueKey){
             } else {
                 this.classList.add("strike");
             }
-
         });
         ul.appendChild(li);
     }
-        ul.classList.remove(uniqueKey);
+
+    ul.classList.remove(uniqueKey);
 };
 
+function deletelist() {
 
-function savedlists(){
+
+    ul.innerHTML = "";
+    localStorage.removeItem(ul.id);
+    savedlists();
+};
+
+function savedlists() {
     var savediv = document.getElementById("save-row");
-    savediv.innerHTML =""; //reset savedlists Liste!
+        savediv.innerHTML = ""; //reset savedlists Liste!
 
     for (let key in localStorage) {
-      if (key.startsWith('task-')) {        
-        var storedlist = createStoredList(key);
-        savediv.appendChild(storedlist);
-      }
+        if (key.startsWith('task-')) {        
+            var storedlist = createStoredList(key);
+            savediv.appendChild(storedlist);
+        }
     }
 };
+
 
 
 function createStoredList(key) {
@@ -135,9 +123,4 @@ function createStoredList(key) {
         return storedlist;
 };
 
-
-
-window.onload = function() {
-    savedlists()
-};
 
