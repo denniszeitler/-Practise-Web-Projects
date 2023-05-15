@@ -12,7 +12,7 @@ body {
 }
 
 
-.error {
+#error {
     color: red;
 }
 
@@ -36,6 +36,13 @@ body {
 
 }
 
+@media screen and (max-width: 768px) {
+    #program {
+        width: 90%; /* Anpassung der Breite für kleinere Bildschirme */
+        font-size: 25px; /* Anpassung der Schriftgröße für kleinere Bildschirme */
+    }
+}
+
 .strike {
     text-decoration: line-through;
     color:#648381;
@@ -53,7 +60,11 @@ body {
 
 }
 
-
+#del {
+    align-self: flex-end;
+    margin-right: 20px;
+    color: rgb(214, 98, 98);
+}
 
 #edit-list{
 
@@ -70,15 +81,28 @@ input{
     background-color: #EAEDEE;
 }
 
+@media screen and (max-width: 768px) {
+    input{
+        width: 300px; /* Anpassung der Breite für kleinere Bildschirme */
+    }
+}
+
 button{
     border: 0;
     border-radius: 20px;
-    margin-left: -50px;
     color: white;
     background-color: #575761;
     height: 54px;
     width: 100px;
     cursor: pointer;
+
+    
+}
+
+@media screen and (max-width: 768px) {
+    button{
+        width: 70px; /* Anpassung der Breite für kleinere Bildschirme */
+    }
 }
 
 .textsize-big{
@@ -89,7 +113,6 @@ button{
 li{
     list-style: circle;
 }
-
 
 
 .save-object {
@@ -104,22 +127,8 @@ li{
     cursor: pointer;
 }
 
-@keyframes move {
-    0%{
-        top: 0;
-    }
-    100%{
-        top: 200;
-    }
-}
-
-.save-object:hover {
-    animation: move 5s;
-}
-
 
 ul li:first-child {
     list-style: none;
 
 }
-

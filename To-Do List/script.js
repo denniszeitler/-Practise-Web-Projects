@@ -10,7 +10,6 @@ window.onload = function() {
     ul = taskdiv.querySelector("ul");
     li = document.createElement("li");
     error = document.getElementById("error");
-        error.classList.add("error");
     savedlists();
 };
 
@@ -43,7 +42,7 @@ function savelist() {
     var tasks = [];
 
     if(ul.textContent.trim() === '') {
-        error.textContent = "Liste hat keinen Inhalt";
+        error.textContent = "list has no entries";
         return;
     }
 
@@ -58,6 +57,7 @@ function savelist() {
     localStorage.setItem(uniqueKey, JSON.stringify(tasks));
     ul.innerHTML = ""; //clear List
     input.placeholder = "Enter a title first";
+    ul.removeAttribute("id");
     savedlists();
 };
 
@@ -68,7 +68,7 @@ function loadlist(uniqueKey) {
 
 
     if(ul.classList.contains(uniqueKey)) {
-        console.log("Liste bereits geöffnet!");
+        console.log("list already opened");
     } else {
         ul.id = uniqueKey;
     }
@@ -90,9 +90,13 @@ function loadlist(uniqueKey) {
 
 function deletelist() {
 
-
+    if(ul.id == 0){
+        error.textContent = "no list opened";
+        return;
+    }
     ul.innerHTML = "";
     localStorage.removeItem(ul.id);
+    input.placeholder = "Enter a title first";
     savedlists();
 };
 
