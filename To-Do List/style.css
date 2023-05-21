@@ -83,7 +83,7 @@ input{
     background-color: #EAEDEE;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 961px) {
     input{
         width: 200px; /* Anpassung der Breite für kleinere Bildschirme */
     }
@@ -129,8 +129,21 @@ li{
     cursor: pointer;
 }
 
+.save-object:hover {
+    animation-name: moveso;
+    animation-duration: 100s;
+}
 
 ul li:first-child {
     list-style: none;
 
+}
+
+@keyframes moveso {
+    0% {
+        top: 5px;
+    }
+    100% {
+        top: 5px;
+    }
 }

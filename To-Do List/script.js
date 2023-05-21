@@ -1,6 +1,6 @@
 /*TO DO:!
 - Kommentieren :)
-- strike klasse evtl. bei addtask schon hinzufügen
+- Wenn "strike", dann Punkt löschen?
 
 
 
@@ -34,6 +34,13 @@ function addtask() {
         ul.appendChild(li);
     } else {
         li.textContent = input.value;
+        li.addEventListener('click', function() {
+            if (this.classList.contains("strike")) {
+                this.classList.remove("strike");
+            } else {
+                this.classList.add("strike");
+            }
+        });
         ul.appendChild(li);
     }
 
