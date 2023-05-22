@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+<title>i am bored</title>
+
+<metacharset="utf-8">
+ <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+    <div class="main-window">
+        <h1>Create your Character</h1>
+        <input id="charactername" placeholder="name">
+        <div class="character-window">
+            <div id="character">
+                <div id="hair"></div>
+                    <div class="eyesection">
+                        <div class="eye eye-l"></div>
+                        <div class="eye eye-r"></div>
+                    </div>
+                <div class="mouth"></div>
+            </div>
+        </div>
+        <div class="flex-row">
+            <button onclick="ChangeBodyColor()">Change Body Color</button>
+        </div>
+        <div class="flex-row">
+            <button onclick="ChangeHairColor()">Change Hair Color</button>
+        </div>
+        <button onclick="CreateCharacter()">Create</button>
+    </div>
+<script src="js/index.js" defer></script>
+</body>
+
+</html>
