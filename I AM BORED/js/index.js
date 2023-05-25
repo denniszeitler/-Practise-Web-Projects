@@ -1,20 +1,21 @@
 const characterName = document.getElementById("charactername");
-const character = document.getElementById("character");
-const hair = document.getElementById("hair");
+const character = document.getElementById("charactermiddle");
+const characterleft = document.getElementById("characterleft");
+const characterright = document.getElementById("characterright");
+const eye = document.getElementsByClassName("eye");
 const savedcharacter = JSON.parse(localStorage.getItem("character"))
 
 const colors = ["white","red","blue"];
-const haircolors = ["blonde","red"];
+const eyecolors = ["blonde","red"];
 
 let ibody = 0;
-let ihair = 0;
+let ieye = 0;
 
-console.log(savedcharacter.length);
 
 window.onload = function(){
-    characterexist();
-    ChangeHairColor();
+    ChangeEyeColor();
     ChangeBodyColor();
+    characterexist();
 };
 
 
@@ -30,41 +31,54 @@ function ChangeBodyColor(){
 
     if(character.className.length == 0){
         character.classList.add("color-" + colors[ibody]);
+        characterleft.classList.add("color-" + colors[ibody]);
+        characterright.classList.add("color-" + colors[ibody]);
     }
     else{
-        character.classList.remove(character.className); //clear current color
+        character.classList.remove(character.className);//clear current color
+        characterleft.classList.remove(characterleft.className);
+        characterright.classList.remove(characterright.className);
     }
 
 
     if(ibody == colors.length){
         ibody = 0; //Reset i
         character.classList.add("color-" + colors[ibody]);
+        characterleft.classList.add("color-" + colors[ibody]);
+        characterright.classList.add("color-" + colors[ibody]);
         ibody++;
     }
     else {
         character.classList.add("color-" + colors[ibody]);
+        characterleft.classList.add("color-" + colors[ibody]);
+        characterright.classList.add("color-" + colors[ibody]);
         ibody++;
     }
 };
 
-function ChangeHairColor(){
+function ChangeEyeColor(){
 
-    if(hair.className.length == 0){
-        hair.classList.add("color-" + haircolors[ihair]);
+    console.log(ieye);
+    if(eye[0].className.length == 0){
+        eye[0].classList.add("color-" + eyecolors[ieye]);
+        eye[1].classList.add("color-" + eyecolors[ieye]);
     }
     else{
-        hair.classList.remove(hair.className);
+        eye[0].classList.remove("color-" + eyecolors[ieye - 1]);
+        eye[1].classList.remove("color-" + eyecolors[ieye - 1]);
     }
 
 
-    if(ihair == haircolors.length){
-        ihair = 0; //Reset i
-        hair.classList.add("color-" + haircolors[ihair]);
-        ihair++;
+    if(ieye == eyecolors.length){
+        ieye = 0; //Reset i
+        eye[0].classList.add("color-" + eyecolors[ieye]);
+        eye[1].classList.add("color-" + eyecolors[ieye]);
+        ieye++;
     }
     else {
-        hair.classList.add("color-" + haircolors[ihair]);
-        ihair++;
+        eye[0].classList.add("color-" + eyecolors[ieye]);
+        eye[1].classList.add("color-" + eyecolors[ieye]);
+        ieye++;
     }
 };
 
@@ -72,7 +86,7 @@ function ChangeHairColor(){
 
 function CreateCharacter(){
     let CharacterSettings = [];
-    CharacterSettings.push(characterName.value, hair.className, character.className);
+    CharacterSettings.push(characterName.value, character.className, eye[0].className.substring(10,22), 0, 0);
     // blank EXP einfügen!
 
     localStorage.setItem("character", JSON.stringify(CharacterSettings));

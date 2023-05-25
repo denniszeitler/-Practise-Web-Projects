@@ -13,22 +13,35 @@
 <body>
 
 <div class="main-window">
-    <p id="charactername"></p>
-        <div class="character-window">
-            <div id="character">
-                <div id="hair"></div>
-                    <div class="eyesection">
-                        <div class="eye eye-l"></div>
-                        <div class="eye eye-r"></div>
-                    </div>
+    <div class="flex-row space-between">
+    <div class="flex-column">
+        <h1 id="charactername"></h1>
+        <div id="character">
+            <div id="characterleft"></div>
+            <div id="charactermiddle">
+                <div class="eyesection">
+                    <div class="eye eye-l"></div>
+                    <div class="eye eye-r"></div>
+                </div>
                 <div class="mouth"></div>
             </div>
+            <div id="characterright"></div>
         </div>
+    </div>
+        <div id="characterstats">
+            <h2 id="level"></h2>
+            <h2 id="experience"></h2>
+            <button id="shop" class="color-blonde" onclick="OpenShop()">SHOP</button>
+        </div>
+    </div>
 
     <div id="task">
         <h2 id="challenge"></h2>
         <p id="exp" class="color-blonde"></p>
+        <p id="timer"></p>
+        <p id="countdown"></p>
     </div>
+
 </div>
 
 

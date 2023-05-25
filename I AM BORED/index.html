@@ -11,24 +11,29 @@
 </head>
 
 <body>
-    <div class="main-window">
+    <div class="main-window align-items-center">
         <h1>Create your Character</h1>
         <input id="charactername" placeholder="name">
+
         <div class="character-window">
             <div id="character">
-                <div id="hair"></div>
+                <div id="characterleft"></div>
+                <div id="charactermiddle">
                     <div class="eyesection">
                         <div class="eye eye-l"></div>
                         <div class="eye eye-r"></div>
                     </div>
-                <div class="mouth"></div>
+                    <div class="mouth"></div>
+                </div>
+                <div id="characterright"></div>
             </div>
         </div>
         <div class="flex-row">
-            <button onclick="ChangeBodyColor()">Change Body Color</button>
+            <button onclick="ChangeEyeColor()">Change Eye Color</button>
         </div>
+
         <div class="flex-row">
-            <button onclick="ChangeHairColor()">Change Hair Color</button>
+            <button onclick="ChangeBodyColor()">Change Body Color</button>
         </div>
         <button onclick="CreateCharacter()">Create</button>
     </div>

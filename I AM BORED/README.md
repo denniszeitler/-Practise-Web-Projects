@@ -9,7 +9,7 @@ The idea behind this project: I often get bored in my spare time and need to do 
 
 - your own character
 - random tasks to complete
-- EXP points and level ups (coming soon)
+- EXP points and level ups
 - Unlockables for your character (coming soon)
 
 
