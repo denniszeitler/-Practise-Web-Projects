@@ -82,26 +82,35 @@ function showtask(){
 const countdown = document.getElementById("countdown");
 
 
+let TimerStarted = false;
+
 function StartTask(time, exp) {
-    var count = time * 60; // in Sekunden umrechnen
-    var interval = setInterval(function(){
-        var minutes = Math.floor(count / 60); // Minuten berechnen
-        var seconds = count % 60; // Sekunden berechnen
+    if (!TimerStarted) {
+        TimerStarted = true;
 
-        // Formatierung der Minuten und Sekunden (z.B. "01:30" für 1 Minute und 30 Sekunden)
-        var formattedTime = ('0' + minutes).slice(-2) + ':' + ('0' + seconds).slice(-2);
+        var count = time * 60; // in Sekunden umrechnen
+        var interval = setInterval(function() {
+            var minutes = Math.floor(count / 60); // Minuten berechnen
+            var seconds = count % 60; // Sekunden berechnen
 
-        countdown.innerText = formattedTime; // Countdown-Anzeige aktualisieren
+            // Formatierung der Minuten und Sekunden (z.B. "01:30" für 1 Minute und 30 Sekunden)
+            var formattedTime = ('0' + minutes).slice(-2) + ':' + ('0' + seconds).slice(-2);
 
-        count--; // Countdown verringern
+            countdown.innerText = formattedTime; // Countdown-Anzeige aktualisieren
 
-        if (count < 0) {
-            clearInterval(interval); // Timer stoppen
-            savedcharacter[4] = savedcharacter[4] + exp;
-            localStorage.setItem("character", JSON.stringify(savedcharacter));
-            location.reload();
-        }
-    }, 1000);
+            count--; // Countdown verringern
+
+            if (count < 0) {
+                clearInterval(interval); // Timer stoppen
+                savedcharacter[4] = savedcharacter[4] + exp;
+                localStorage.setItem("character", JSON.stringify(savedcharacter));
+
+                TimerStarted = false;
+
+                location.reload();
+            }
+        }, 1000);
+    }
 }
 
 
