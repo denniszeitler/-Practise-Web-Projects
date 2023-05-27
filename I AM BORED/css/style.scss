@@ -72,13 +72,78 @@ button:hover{
     align-items: center;
 }
 
+.align-text-center {
+    text-align: center;
+}
+
 .space-between{
     justify-content: space-between;
+}
+
+.space-evenly{
+    justify-content: space-evenly;
 }
 
 #characterstats{
     margin-right: 20%;
 }
+
+.color-div {
+    height: 60px;
+    width: 60px;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+
+
+/* START --- ALL BASIC COLORS */
+
+.color-white {
+    background-color: #ffffff;
+}
+
+.color-red {
+    background-color: #ff0000;
+}
+
+.color-blue {
+    background-color: #0000ff;
+}
+
+.color-blonde {
+    background-color: #ffd700;
+}
+
+/* END --- ALL BASIC COLORS */
+
+/* START --- ALL SHOP COLORS */
+
+.color-green {
+    background-color: #008000;
+}
+
+.color-purple {
+    background-color: #800080;
+}
+
+.color-pink {
+    background-color: #ffc0cb;
+}
+
+.color-grey {
+    background-color: #808080;
+}
+
+.color-black {
+    background-color: #000000;
+}
+
+.color-lime {
+    background-color: #00ff00;
+}
+
+/* END --- ALL SHOP COLORS */
 
 /* START --- ONLY CHARACTER SCSS!*/
 
@@ -111,22 +176,6 @@ button:hover{
     height: 20px;
     width: 10px;
     
-}
-
-.color-white {
-    background-color: white;
-}
-
-.color-red {
-    background-color: red;
-}
-
-.color-blue {
-    background-color: blue;
-}
-
-.color-blonde {
-    background-color: gold;
 }
 
 .character-window {

@@ -3,10 +3,15 @@ const character = document.getElementById("charactermiddle");
 const characterleft = document.getElementById("characterleft");
 const characterright = document.getElementById("characterright");
 const eye = document.getElementsByClassName("eye");
-const savedcharacter = JSON.parse(localStorage.getItem("character"))
+const savedcharacter = JSON.parse(localStorage.getItem("character"));
 
-const colors = ["white","red","blue"];
-const eyecolors = ["blonde","red"];
+const PushColors = ["white","red","blue","green"];
+    localStorage.setItem("colors", JSON.stringify(PushColors));
+    const colors = JSON.parse(localStorage.getItem("colors"));
+
+const PushEyeColors = ["blonde","red"];
+    localStorage.setItem("eyecolors", JSON.stringify(PushEyeColors));
+    const eyecolors = JSON.parse(localStorage.getItem("eyecolors"));
 
 let ibody = 0;
 let ieye = 0;

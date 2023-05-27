@@ -38,6 +38,8 @@ function ReturnLevel() {
         }
         
     };
+    savedcharacter[5] = stats[i].level;
+    localStorage.setItem("character", JSON.stringify(savedcharacter));
     level.innerHTML = "Level: " + stats[i].level;
 };
 
