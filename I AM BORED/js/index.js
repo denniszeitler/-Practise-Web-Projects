@@ -5,7 +5,7 @@ const characterright = document.getElementById("characterright");
 const eye = document.getElementsByClassName("eye");
 const savedcharacter = JSON.parse(localStorage.getItem("character"));
 
-const PushColors = ["white","red","blue","green"];
+const PushColors = ["white","red","blue"];
     localStorage.setItem("colors", JSON.stringify(PushColors));
     const colors = JSON.parse(localStorage.getItem("colors"));
 

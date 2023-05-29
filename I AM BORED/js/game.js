@@ -15,7 +15,7 @@ const savedcharacter = JSON.parse(localStorage.getItem("character"));
 const tasks = [
     { task: "Do 10 Pushups", exp: 10, timer: 2 },
     { task: "Go outside and walk for 15 Minutes", exp: 30, timer: 15 },
-    { task: "Make a fruit salad", exp: 20, timer: 10 },
+    { task: "Eat some fruits", exp: 20, timer: 2 },
     { task: "Listen to one of your favourite Songs", exp: 10, timer: 4 }
 ];
 
@@ -24,7 +24,7 @@ const stats = [
     {level: 2, exp: 40},
     {level: 3, exp: 100},
     {level: 4, exp: 200},
-    {level: "MAX", exp: 400},
+    {level: 5, exp: 400},
 ];
 
 
