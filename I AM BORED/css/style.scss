@@ -22,15 +22,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-}
-
-
-.game-window {
-    width: 70vh;
-    height: 70vh;
-    background-color: rgba(255, 255, 255, 0.5);
     
 }
+
+
 
 #task {
     width: 30vh;
@@ -62,6 +57,13 @@ button:hover{
     flex-direction: row;
 }
 
+.flex-character{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
 .flex-column{
     display: flex;
     flex-direction: column;
@@ -84,10 +86,6 @@ button:hover{
     justify-content: space-evenly;
 }
 
-#characterstats{
-    margin-right: 20%;
-}
-
 .color-div {
     height: 60px;
     width: 60px;
@@ -98,6 +96,10 @@ button:hover{
     color: #ffffff;
 }
 
+
+.opacity50 {
+    opacity: 50%;
+}
 
 
 /* START --- ALL BASIC COLORS */

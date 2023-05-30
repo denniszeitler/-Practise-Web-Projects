@@ -12,6 +12,7 @@ const timer = document.getElementById("timer");
 const savedcharacter = JSON.parse(localStorage.getItem("character"));
 
 
+
 const tasks = [
     { task: "Do 10 Pushups", exp: 10, timer: 2 },
     { task: "Go outside and walk for 15 Minutes", exp: 30, timer: 15 },
@@ -40,7 +41,7 @@ function ReturnLevel() {
     };
     savedcharacter[5] = stats[i].level;
     localStorage.setItem("character", JSON.stringify(savedcharacter));
-    level.innerHTML = "Level: " + stats[i].level;
+    level.innerHTML = "Level: " + stats[i].level + " ";;
 };
 
 window.onload = function(){
@@ -51,7 +52,6 @@ window.onload = function(){
 };
 
 function loadCharacter() {
-    console.log(savedcharacter);
     characterName.innerText = savedcharacter[0];
     characterleft.classList.add(savedcharacter[1]);
     character.classList.add(savedcharacter[1]);
@@ -61,8 +61,8 @@ function loadCharacter() {
 };
 
 function UpdateStats(){
-    level.innerText = "Level " + savedcharacter[3];
-    experience.innerText = "EXP: " + savedcharacter[4];
+    level.innerText = "Level: " + savedcharacter[3] + " ";
+    experience.innerText = "(" + savedcharacter[4] + "EXP)";
 }
 
 
@@ -121,3 +121,7 @@ function OpenShop() {
     location.replace("./shop.html");
 }
 
+function EditCharacter() {
+    localStorage.setItem("characterAction", 0);
+    location.replace("./index.html");
+};

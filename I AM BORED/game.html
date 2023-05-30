@@ -13,9 +13,17 @@
 <body>
 
 <div class="main-window">
-    <div class="flex-row space-between">
     <div class="flex-column">
+    <div class="flex-column">
+        <div class="flex-row">
+            <button id="charactereditor" class="" onclick="EditCharacter()">EDIT CHARACTER</button>
+            <button id="shop" class="" onclick="OpenShop()">SHOP</button>
+        </div>
         <h1 id="charactername"></h1>
+        <div class="flex-row">
+            <h3 id="level"></h3>
+            <h3 id="experience" class="opacity50"></h3>
+        </div>
         <div id="character">
             <div id="characterleft"></div>
             <div id="charactermiddle">
@@ -28,12 +36,7 @@
             <div id="characterright"></div>
         </div>
     </div>
-        <div id="characterstats">
-            <h2 id="level"></h2>
-            <h2 id="experience"></h2>
-            <button id="shop" class="color-blonde" onclick="OpenShop()">SHOP</button>
-        </div>
-    </div>
+</div>
 
     <div id="task">
         <h2 id="challenge"></h2>

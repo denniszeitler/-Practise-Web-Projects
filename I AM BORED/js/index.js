@@ -4,14 +4,22 @@ const characterleft = document.getElementById("characterleft");
 const characterright = document.getElementById("characterright");
 const eye = document.getElementsByClassName("eye");
 const savedcharacter = JSON.parse(localStorage.getItem("character"));
+const characterAction = localStorage.getItem("characterAction");
+
+
 
 const PushColors = ["white","red","blue"];
-    localStorage.setItem("colors", JSON.stringify(PushColors));
-    const colors = JSON.parse(localStorage.getItem("colors"));
-
 const PushEyeColors = ["blonde","red"];
+let colors = [];
+let eyecolors = [];
+
+
+if(!(characterAction == 0)) {
+    localStorage.setItem("colors", JSON.stringify(PushColors));
     localStorage.setItem("eyecolors", JSON.stringify(PushEyeColors));
-    const eyecolors = JSON.parse(localStorage.getItem("eyecolors"));
+} 
+colors = JSON.parse(localStorage.getItem("colors"));
+eyecolors = JSON.parse(localStorage.getItem("eyecolors"));
 
 let ibody = 0;
 let ieye = 0;
@@ -26,7 +34,7 @@ window.onload = function(){
 
 
 function characterexist(){
-    if(savedcharacter.length > 0){
+    if(characterAction == 1){
         location.replace("./game.html");
     }
 
@@ -63,7 +71,6 @@ function ChangeBodyColor(){
 
 function ChangeEyeColor(){
 
-    console.log(ieye);
     if(eye[0].className.length == 0){
         eye[0].classList.add("color-" + eyecolors[ieye]);
         eye[1].classList.add("color-" + eyecolors[ieye]);
@@ -90,10 +97,19 @@ function ChangeEyeColor(){
 
 
 function CreateCharacter(){
+
     let CharacterSettings = [];
-    CharacterSettings.push(characterName.value, character.className, eye[0].className.substring(10,22), 0, 0);
-    // blank EXP einfügen!
+
+    if(characterAction == 0){
+        CharacterSettings.push(characterName.value, character.className, eye[0].className.substring(10,22), savedcharacter[3], savedcharacter[4], savedcharacter[5]);
+    } else {
+        CharacterSettings.push(characterName.value, character.className, eye[0].className.substring(10,22), 0, 0, 0);
+        // blank EXP einfügen!
+    }
 
     localStorage.setItem("character", JSON.stringify(CharacterSettings));
+    localStorage.setItem("characterAction", "1"); 
+    // 0 - edit
+    // 1 - created
     location.replace("./game.html");
 };
