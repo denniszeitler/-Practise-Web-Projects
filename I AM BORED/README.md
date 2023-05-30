@@ -14,3 +14,4 @@ The idea behind this project: I often get bored in my spare time and need to do 
 - Character Editor
 
 
+![App Screenshot](https://i.imglol.de/imboredoq66zcom.jpg)
