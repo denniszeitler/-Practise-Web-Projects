@@ -17,7 +17,11 @@ const tasks = [
     { task: "Do 10 Pushups", exp: 10, timer: 2 },
     { task: "Go outside and walk for 15 Minutes", exp: 30, timer: 15 },
     { task: "Eat some fruits", exp: 20, timer: 2 },
-    { task: "Listen to one of your favourite Songs", exp: 10, timer: 4 }
+    { task: "Listen to one of your favourite Songs", exp: 10, timer: 4 },
+    { task: "Talk to a friend", exp: 15, timer: 10 },
+    { task: "Do some breathing exercise", exp: 10, timer: 5 },
+    { task: "Do 10 Squats", exp: 10, timer: 2 },
+    { task: "Think about happy memories ", exp: 15, timer: 5 }
 ];
 
 const stats = [
