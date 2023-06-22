@@ -1,0 +1,134 @@
+:root {
+
+    --main-font-color: #fff;
+    --main-bg-color: #000;
+
+
+    font-family: Arial, Verdana, sans-serif;
+    
+    background-color: var(--main-bg-color);
+}
+
+body {
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--main-font-color);
+}
+
+
+.logo {
+    height: 3em;
+    width: auto;
+}
+
+.navdiv {
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+}
+
+.navlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item {
+    list-style: none;
+    margin-right: 2rem;
+}
+
+
+.nav-item a {
+    text-decoration: none;
+    color: var(--main-font-color);
+}
+
+.nav-left {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    min-width: 130px;
+    padding: 15px 50px;
+    font-weight: bold;
+
+}
+
+.background-1 .text-inner,
+.background-2 .text-inner,
+.background-3 .text-inner,
+.background-4 .text-inner,
+.background-5 .text-inner {
+    position: relative;
+    top: 75%;
+    left: 15%;
+    transform: translate(0, 0);
+}
+
+
+.background-1 {
+    height: 100vh;
+    background-image: url(img/Star5_11_DSC_3258_desktop_bd16994383.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.background-2 {
+    height: 100vh;
+    background-image: url(img/Vandy_desktop1_686164ccc7.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.background-3 {
+    height: 100vh;
+    background-image: url(img/CRS_28_outsidehangar1h_IMG_3768_desktop_f9d8036732.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.background-4 {
+    height: 100vh;
+    background-image: url(img/Axiom_2_Splashdown_Crew_Website_000729053023_Desktop_2_3b35df56e4.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.background-5 {
+    height: 100vh;
+    background-image: url(img/STARSHIP_Testflight_DESKTOP_2b3bea613a.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+ 
+.footerlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.footer-item {
+    margin-right: 2rem;
+}
+
+.footer-item a {
+    text-decoration: none;
+    color: var(--main-font-color);
+    font-size: 10px;
+}
